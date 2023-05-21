@@ -10,4 +10,5 @@ return [
     'statistika' => [[], ['_controller' => 'App\\Controller\\StatisticsController::index'], [], [['text', '/statistika']], [], [], []],
     'yetinder' => [[], ['_controller' => 'App\\Controller\\YetinderController::index'], [], [['text', '/yetinder']], [], [], []],
     'hodnoceni' => [[], ['_controller' => 'App\\Controller\\YetinderController::hodnoceni'], [], [['text', '/yetinder/hodnoceni']], [], [], []],
+    'konec' => [[], ['_controller' => 'App\\Controller\\YetinderController::konec'], [], [['text', '/yetinder/konec']], [], [], []],
 ];

@@ -5,16 +5,14 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use App\Service\nactiUzivatele;
 use App\Entity\Yeti;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Session\Session;
 
 class YetinderController extends AbstractController
 {
     #[Route('/yetinder', name: 'yetinder')]
-    public function index(nactiUzivatele $nactiUzivatele, EntityManagerInterface $entityManager, Request $request): Response
+    public function index(EntityManagerInterface $entityManager, Request $request): Response
     {
         $repository = $entityManager->getRepository(Yeti::class);
         $yeti = $repository->findAll();
@@ -23,7 +21,7 @@ class YetinderController extends AbstractController
             $yeti = $session->get('pole');
         }
         if (empty($yeti)) {
-            return $this->redirectToRoute('konecyetinder');
+            return $this->redirectToRoute('konec');
         }
         $nahodnyCislo = array_rand($yeti);
         $nahodnyYeti = $yeti[$nahodnyCislo];
@@ -53,5 +51,13 @@ class YetinderController extends AbstractController
         }
 
         return $this->redirectToRoute('yetinder');
+    }
+
+    #[Route('/yetinder/konec', name: 'konec')]
+    public function konec()
+    {
+        return $this->render('user/konec.html.twig', [
+
+        ]);
     }
 }

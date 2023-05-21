@@ -20,7 +20,6 @@ class AddController extends AbstractController
     {
         $yeti = new Yeti();
         $form = $this->createForm(YetiFormType::class, $yeti);
-
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($yeti);

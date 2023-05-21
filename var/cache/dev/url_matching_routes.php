@@ -14,6 +14,7 @@ return [
         '/statistika' => [[['_route' => 'statistika', '_controller' => 'App\\Controller\\StatisticsController::index'], null, null, null, false, false, null]],
         '/yetinder' => [[['_route' => 'yetinder', '_controller' => 'App\\Controller\\YetinderController::index'], null, null, null, false, false, null]],
         '/yetinder/hodnoceni' => [[['_route' => 'hodnoceni', '_controller' => 'App\\Controller\\YetinderController::hodnoceni'], null, null, null, false, false, null]],
+        '/yetinder/konec' => [[['_route' => 'konec', '_controller' => 'App\\Controller\\YetinderController::konec'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
