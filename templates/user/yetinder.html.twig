@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div style="padding-top: 5rem; text-align: center;">
+        <h1>Yetinder</h1>
+        <p class="fs-2">Jméno : {{ nahodnyYeti.getName() }}</p>
+        <br>
+        <p class="fs-2">Bydliště : {{ nahodnyYeti.getBydliste() }}</p>
+        <br>
+        <p class="fs-2">Věk : {{ nahodnyYeti.getVek() }} let</p>
+        <br>
+        <p class="fs-2">Výška : {{ nahodnyYeti.getVyska() }} cm</p>
+        <br>
+        <p class="fs-2">Hodnocení : {{ nahodnyYeti.getHodnoceni() }}</p>
+        <br>
+        <div class="row">
+            <div class="col-sm-6">
+                <form method="post" action="{{ path('hodnoceni') }}">
+                <input type="hidden" name="akce" value="{{ 0 }}" />
+                <input type="hidden" name="id" value="{{ nahodnyYeti.getId() }}" />
+                <button type="submit" class="btn btn-primary btn-lg">-1</button>
+                </form>
+            </div>
+            <div class="col-sm-6">
+                <form method="post" action="{{ path('hodnoceni') }}">
+                <input type="hidden" name="akce" value="{{ 1 }}" />
+                <input type="hidden" name="id" value="{{ nahodnyYeti.getId() }}" />
+                <button type="submit" class="btn btn-primary btn-lg">+1</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container text-center" style="padding-top: 10rem; align-items: center; padding-right: 30rem; padding-left: 30rem;" >
+        <h1>Přidat Yetiho</h1>
+        {{ form_start(yeti_form) }}
+        {{ form(yeti_form) }}
+        {{ form_end(yeti_form) }}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div style="padding-top: 5rem; text-align: center;">
+        <div class="container text-center">
+            <h1>Hodnocení</h1>
+            {{ render_chart(chart) }}
+        </div>
+    </div>
+
+{% endblock %}
